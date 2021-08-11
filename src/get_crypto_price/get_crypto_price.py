@@ -9,19 +9,6 @@ sources = [
 
 def get(source = "bitstamp", pair = "btcusdt"):
 
-    parser = argparse.ArgumentParser()
-    parser.add_argument('-s', '--source', type=str, help='Source')
-    parser.add_argument('-p', '--pair', type=str, help='Pair')
-
-    args = parser.parse_args()
-
-    if not args.source is None:
-        source = args.source
-    if not args.pair is None:
-        pair = args.pair
-    
-
-
     if source in sources:
         URL = None
 
@@ -47,3 +34,19 @@ def get(source = "bitstamp", pair = "btcusdt"):
             print(each_source)
         raise "Source is unavailable"
 
+def arguments():
+    source = "bitstamp"
+    pair = "btcusdt"
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-s', '--source', type=str, help='Source')
+    parser.add_argument('-p', '--pair', type=str, help='Pair')
+
+    args = parser.parse_args()
+
+    if not args.source is None:
+        source = args.source
+    if not args.pair is None:
+        pair = args.pair
+
+    return get(source=source, pair=pair)

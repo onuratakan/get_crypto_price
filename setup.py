@@ -2,7 +2,7 @@ from setuptools import setup
 
 
 setup(name='get_crypto_price',
-version='0.1.0',
+version='0.1.1',
 description="""A library to getting crypto price.""",
 long_description="""
 # Get Crypto Price
@@ -40,7 +40,7 @@ install_requires=[
     "requests==2.25.1"
 ],
 entry_points = {
-    'console_scripts': ['get_crypto_price=get_crypto_price.get_crypto_price:get'],
+    'console_scripts': ['get_crypto_price=get_crypto_price.get_crypto_price:arguments'],
 },
 python_requires=">= 3",
 zip_safe=False)
