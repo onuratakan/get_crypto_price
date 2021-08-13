@@ -26,7 +26,6 @@ def get_crypto_price(source = "bitstamp", crypto = "btc", pair = "usdt"):
 
             try:
                 r = requests.get(URL)
-                print(r.text)
                 if source == "bitstamp":
                     priceFloat = float(json.loads(r.text)["last"])
                 elif source == "binance":
