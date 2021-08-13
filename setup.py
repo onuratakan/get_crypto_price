@@ -2,7 +2,7 @@ from setuptools import setup
 
 
 setup(name='get_crypto_price',
-version='0.2.0',
+version='0.2.1',
 description="""A library to getting crypto price.""",
 long_description="""
 # Get Crypto Price

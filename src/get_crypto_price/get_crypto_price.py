@@ -26,7 +26,13 @@ def get_crypto_price(source = "bitstamp", crypto = "btc", pair = "usdt"):
 
             try:
                 r = requests.get(URL)
-                priceFloat = float(json.loads(r.text)["last"])
+                print(r.text)
+                if source == "bitstamp":
+                    priceFloat = float(json.loads(r.text)["last"])
+                elif source == "binance":
+                    priceFloat = float(json.loads(r.text)["price"])
+                elif source == "coingecko":
+                    priceFloat = float(json.loads(r.text)[crypto][pair])
                 return priceFloat
 
             except requests.ConnectionError:
